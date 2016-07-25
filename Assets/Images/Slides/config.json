@@ -1,0 +1,20 @@
+﻿[{
+      "id": 1,
+      "type": "mainslider",
+      "folder": "July2016",
+      "filetype": ".jpg",
+      "transition": "swing",
+      "speed": 500,
+      "max": 4,
+      "IsCaption": true
+    },
+    {
+      "id": 2,
+      "type": "thumbslider",
+      "folder": "ProductsJuly2016",
+      "filetype": ".jpg",
+      "transition": "swing",
+      "speed": 500,
+      "max": 4,
+      "IsCaption": false
+}]

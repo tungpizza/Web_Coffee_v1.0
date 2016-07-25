@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+  <Product type="beans">
+    <id>001</id>
+    <code>LS94</code>
+    <name>bean 1</name>
+    <price>30</price>
+    <origin>Brazil</origin>
+    <stock>Available</stock>
+    <description>Best caturra from Brazil</description>
+    <anchor>#link1</anchor>
+  </Product>
+<Product type="beans">
+    <id>002</id>
+    <code>03KD</code>
+    <name>bean 2</name>
+    <price>330</price>
+    <origin>Vietnam</origin>
+    <stock>Available</stock>
+    <description>Best caturra from Vietnam</description>
+    <anchor>#link2</anchor>
+  </Product>
+<Product type="beans">
+    <id>003</id>
+    <code>OK29</code>
+    <name>bean 3</name>
+    <price>130</price>
+    <origin>Ethiopia</origin>
+    <stock>0</stock>
+    <description>Best caturra from Ethiopia</description>
+    <anchor>#link3</anchor>
+  </Product>
+<Product type="beans">
+    <id>004</id>
+    <code>LJ09</code>
+    <name>bean 4</name>
+    <price>320</price>
+    <origin>India</origin>
+    <stock>Available</stock>
+    <description>Best caturra from India</description>
+    <anchor>#link4</anchor>
+  </Product>
+<Product type="beans">
+    <id>005</id>
+    <code>YT87</code>
+    <name>bean 5</name>
+    <price>40</price>
+    <origin>Pakistan</origin>
+    <stock>Available</stock>
+    <description>Best caturra from Pakistan</description>
+    <anchor>#link5</anchor>
+  </Product>
+<Product type="beans">
+    <id>006</id>
+    <code>19AM</code>
+    <name>bean 6</name>
+    <price>20</price>
+    <origin>Yemen</origin>
+    <stock>Available</stock>
+    <description>Best caturra from Yemen</description>
+    <anchor>#link6</anchor>
+  </Product>
+</Products>

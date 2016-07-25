@@ -1,0 +1,19 @@
+﻿{
+  "captions": [
+    {
+      "id": 1,
+      "content": "This is the first caption",
+      "position":  "top" // supports position 'top' and 'bottom'
+    },
+    {
+      "id": 2,
+      "content": "This is the second caption",
+      "position": "top" // supports position 'top' and 'bottom'
+    },
+    {
+      "id": 3,
+      "content": "This is the second caption",
+      "position":  "top" // supports position 'top' and 'bottom'
+    }
+  ]
+}

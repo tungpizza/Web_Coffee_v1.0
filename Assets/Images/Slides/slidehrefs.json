@@ -1,0 +1,56 @@
+﻿[
+  {
+    "id": 1,
+    "type": "main",
+    "href": "#1",
+    "code":  "238Q"
+  },
+  {
+    "id": 2,
+    "type": "main",
+    "href": "#2",
+    "code":  "92AJ"
+  },
+  {
+    "id": 3,
+    "type": "main",
+    "href": "#3",
+    "code":  "29DJ"
+  },
+  {
+    "id": 1,
+    "type": "thumb",
+    "href": "#4",
+    "code":  "LS94"
+  },
+  {
+    "id": 2,
+    "type": "thumb",
+    "href": "#5",
+    "code": "03KD"
+  },
+  {
+    "id": 3,
+    "type": "thumb",
+    "href": "#6",
+    "code":  "OK29"
+  },
+  {
+    "id": 4,
+    "type": "thumb",
+    "href": "#4",
+    "code":  "LJ09"
+  },
+  {
+    "id": 5,
+    "type": "thumb",
+    "href": "#5",
+    "code":  "YT87"
+  },
+  {
+    "id": 6,
+    "type": "thumb",
+    "href": "#6",
+    "code":  "19AM"
+  }
+]

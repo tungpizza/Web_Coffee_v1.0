@@ -1,0 +1,97 @@
+﻿@using MinhCoffee.Resource;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@MinhCoffee.SiteTitle</title>
+    <meta name="description" content="Robusta/Arabica green beans, Arabica Cau Dat"/>
+    <meta name="keywords" content="keywords here"/>
+    <link rel="author" href="" />
+    <link rel="publisher" href=""/>
+    <meta property="og:title" content="Title here"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="path_of_image_here"/>
+    <meta property="og:url" content="https://minhcoffee.com"/>
+    <meta property="og:description" content="description of website here"/>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Headline title here"/>
+    <meta name="twitter:url" content="https://minhcoffee.com" />
+    <meta name="twitter:description" content="description here"/>
+    <meta name="twitter:image" content="link_of_image_here"/>
+    <!-- STYLESHEETS -->
+    <link type="text/css" href="~/Assets/CSS/normalize.css" rel="stylesheet"/>
+    <link type="text/css" href="~/Assets/CSS/font-awesome.min.css" rel="stylesheet"/>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <link type="text/css" href="~/Assets/CSS/style.css" rel="stylesheet"/>
+    <link type="text/css" href="~/Assets/CSS/style-mobile.css" rel="stylesheet" media="screen and (max-width: 767px)" />
+    <!-- JAVASCRIPTS  -->
+    <script type="text/javascript" src="~/Assets/JS/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <section class="wrapper">
+        <header class="header">
+            <nav class="nav">
+                <ul>
+                    <li>
+                        <a href="" class="nav-item homepage fa fa-home"></a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item products">@MinhCoffee.Nav_Products</a>
+                        <ul class="subs">
+                            <li>
+                                <a href="#">@MinhCoffee.Sub_Green_Beans</a>
+                            </li>
+                            <li>
+                                <a href="#">@MinhCoffee.Sub_Green_Beans</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item order">@MinhCoffee.Nav_CheckOrder</a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-item contact">@MinhCoffee.Nav_ContactUs</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="lang-bar" id="lang-box">
+                <a value="en-US" href="#"><img src="~/Assets/Images/us-flag.png" /></a>
+                <a value="fr-FR" href="#"><img src="~/Assets/Images/fr-flag.png" /></a>
+            </div>
+        </header>
+        <section class="main">
+            @RenderBody()
+        </section>
+        <footer class="footer">
+            <div class="foot-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="foot-item terms">@MinhCoffee.FootNav_Terms</a>
+                    </li>
+                    <li>
+                        <a href="#" class="foot-item delivery">@MinhCoffee.FootNav_Delivery</a>
+                    </li>
+                    <li>
+                        <a href="#" class="foot-item security">@MinhCoffee.FootNav_Security</a>
+                    </li>
+                    <li>
+                        <a href="#" class="foot-item payment">@MinhCoffee.FootNav_Payment</a>
+                    </li>
+                    <li>
+                        <a href="#" class="foot-item faqs">@MinhCoffee.FootNav_FAQs</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="foot-alt">
+                <span class="trademark"></span>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>
+<script type="text/javascript" src="~/Assets/JS/common.js"></script>

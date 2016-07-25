@@ -1,0 +1,71 @@
+﻿@using MinhCoffee.Resource;
+@using MinhCoffee.Models;
+
+@{
+    List<Image> main = Model[0].images;
+    List<Image> thumbs = Model[1].images;
+}
+<!--
+    Slides and thumbnails
+-->
+<div id="overlay-bg"><img src="~/Assets/Images/loading.gif" class="loading-img" /></div>
+<script type="text/javascript">
+            // Overlay
+            var overlay = document.getElementById("overlay-bg");
+            overlay.style.display = "block";
+</script>
+<div class="left-col">
+    <div class="slider">
+        <ul>
+            @{
+                if (main != null)
+                {
+                    foreach (var img in main)
+                    {
+                        <li>
+                            <a href="@img.href" name="@img.name">
+                                <img src="@img.src" alt="@img.alt" />
+                            </a>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
+<div class="right-col">
+    <div class="thumbs-wrap">
+        <ul class="thumbslider">
+            @{ 
+                if(thumbs != null)
+                {
+                    foreach(var thumb in thumbs)
+                    {
+                        <li> 
+                           <img src="@thumb.src" alt="@thumb.alt"/>
+                            <div class="cart-bar">
+                                <div class="cart-info">
+                                    <h3>@thumb.alt</h3>
+                                    <p class="origin">
+                                        <span>@MinhCoffee.Origin</span>
+                                        <span>Brazil</span>
+                                    </p>
+                                    <p class="price">
+                                        <span>@MinhCoffee.Price</span>
+                                        <span>50$</span>
+                                    </p>
+                                </div>
+                                <div class="cart-options">
+                                    <a class="view-product">@MinhCoffee.Details</a>
+                                    <a class="add-to-cart">@MinhCoffee.AddTocart</a>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="~/Assets/JS/unslider-min.js"></script>
+<script type="text/javascript" src="~/Assets/JS/jquery.bxslider.min.js"></script>
