@@ -1,10 +1,35 @@
 ﻿@using MinhCoffee.Resource;
 @using MinhCoffee.Models;
+@using PagedList.Mvc;
 
-@{ 
-    var model = Model as List<ViewItemsModel>;
+@{
+    var model = Model as PagedList.IPagedList<ViewItemsModel>;
 }
 
 <div class="products-wrapper">
-
+    @foreach (var item in model)
+    {
+        <div class="item-box">
+            <div class="item-img">
+                @if (item.image != null)
+                {
+                    <img src="@item.image.src" alt="@item.image.alt" />
+                }
+            </div>
+            <div class="item-detail">
+                <h4>@item.name</h4>
+                <ul>
+                    <li>@item.description</li>
+                    <li><span>@MinhCoffee.Origin</span><span>@item.origin</span></li>
+                    <li><span>@MinhCoffee.Price</span><span>@item.price</span></li>
+                    <li><span>@MinhCoffee.Stock</span><span>@item.stock</span></li>
+                </ul>
+                <div class="alt">
+                    <a href="@item.anchor">Detail</a>
+                    <a href="@item.anchor">Add to cart</a>
+                </div>
+            </div>
+        </div>
+    }
+    @Html.PagedListPager(model, page => Url.Action("Index", new { page}))
 </div>

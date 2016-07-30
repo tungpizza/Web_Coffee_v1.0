@@ -221,6 +221,7 @@ header nav ul li a.fa-home:before {
 }
 .main {
     min-height: 496px;
+    position: relative;
 }
 footer {
     font-size: 0;
@@ -483,4 +484,100 @@ ul.subs li a {
 ul.subs li a:hover {
     color: white;
     background-color: green;
+}
+
+.item-box {
+    display: inline-block;
+    width: 48%;
+    margin-top: 20px;
+}
+
+.item-img {
+    width: 198px;
+    float: left;
+}
+
+.item-detail {
+    display: block;
+    margin-left: 232px;
+}
+
+.item-detail ul li {
+    list-style-type: none;
+}
+
+.item-detail ul li:before {
+    content: ">";
+    font-size: 16px;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.item-detail .alt {
+    margin-top: 12px;
+}
+
+.item-detail .alt > a {
+    text-transform: none;
+    text-decoration: none;
+    border: 1px solid #652c13;
+    padding: 5px;
+    line-height: 1;
+    width: 75px;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+}
+
+.item-detail .alt > a:last-child {
+    margin-left: 5px;
+}
+
+.item-detail .alt > a:hover,
+.item-detail .alt > a:focus {
+    color: #652c13;
+}
+
+.pagination-container {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+ul.pagination {
+    display: inline-block;
+}
+
+ul.pagination li {
+    display: inline-block;
+    vertical-align: top;
+    list-style-type: none;
+}
+
+ul.pagination li a {
+    display: inline-block;
+    padding: 2px 12px;
+    font-size: 16px;
+    border: 1px solid;
+    text-decoration: none;
+    color: #652c13;
+    line-height: 1;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+ul.pagination li.active a {
+    border-color: #07d007;
+}
+
+.products-wrapper {
+    min-height: 610px;
+}
+
+.item-detail ul li > span:first-child {
+    text-transform: lowercase;
+    margin-right: 5px;
 }

@@ -159,6 +159,9 @@
   <data name="SiteTitle" xml:space="preserve">
     <value>The_title_should_contain_keywords</value>
   </data>
+  <data name="Stock" xml:space="preserve">
+    <value>Stock:</value>
+  </data>
   <data name="Sub_Green_Beans" xml:space="preserve">
     <value>Coffee Green Beans</value>
   </data>

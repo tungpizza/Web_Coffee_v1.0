@@ -111,17 +111,18 @@ namespace MinhCoffee.Handler
                 }
             }
 
-            var imgsAfterReOrder = ReOrderImageInList(imgs);
-            for(var m=0; m < imgsAfterReOrder.Count; m++)
+            for (var m = 0; m < imgs.Count; m++)
             {
-                if(imgsAfterReOrder.Count == hrefs.Count)
+                if (imgs.Count == hrefs.Count)
                 {
-                   imgsAfterReOrder[m].code = lstHrefs[m].code;
+                    imgs[m].code = hrefs[m].code;
                 }
             }
 
-            if (imgsAfterReOrder.Any())
-                lstImg = imgsAfterReOrder;
+            if (imgs.Any())
+            // Set lstImg to value of imgs if imgs is NOT null
+            // otherwise set imgs to null and lstImg to lstImg
+                lstImg = imgs ?? lstImg;
 
             return lstImg;
         }
