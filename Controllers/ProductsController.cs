@@ -13,6 +13,9 @@ namespace MinhCoffee.Controllers
 {
     public class ProductsController : MinhBaseController
     {
+
+        private List<ViewItemsModel> temps;
+
         // GET: Products
         public ActionResult Index(int? page)
         {
@@ -40,11 +43,35 @@ namespace MinhCoffee.Controllers
                 }
             }
 
-            // Define page numbers
+            // store temp viewModel
+            if (viewModel.Any())
+            {
+                temps = viewModel;
+            }
+
+            // define page numbers
             int pageSize = 4;
             int pageNumber = page ?? 1;
             temp = viewModel.OrderByDescending(m => m.Id).ToPagedList(pageNumber, pageSize);
             return View(temp);
+        }
+
+        /// <summary>
+        /// Product detail page
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        /// 
+        [HttpGet]
+        public ActionResult Item(string code)
+        {
+            ViewItemsModel view = new ViewItemsModel();
+            var item = getCommandHandler().GetItemByCode(code, temps);
+            if(item != null)
+            {
+                view = item;
+            }
+            return View(view);
         }
     }
 }

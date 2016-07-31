@@ -8,6 +8,7 @@ using System.IO;
 using MinhCoffee.Models;
 using MinhCoffee.App_Start;
 using MinhCoffee.Controllers;
+using System.Threading.Tasks;
 
 namespace MinhCoffee.Handler
 {
@@ -125,6 +126,36 @@ namespace MinhCoffee.Handler
                 lstImg = imgs ?? lstImg;
 
             return lstImg;
+        }
+
+        /// <summary>
+        /// GetItemByCode in list of viewItemsModel
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="lst"></param>
+        /// <returns></returns>
+        public ViewItemsModel GetItemByCode(string code, List<ViewItemsModel> lst)
+        {
+            ViewItemsModel item = new ViewItemsModel();
+            try
+            {
+                if (lst.Any())
+                {
+                    foreach(var node in lst)
+                    {
+                        if(node.code == code)
+                        {
+                            item = node;
+                            break;
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            return item;
         }
     }
 }

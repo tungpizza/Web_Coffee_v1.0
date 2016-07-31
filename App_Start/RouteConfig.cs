@@ -32,6 +32,12 @@ namespace MinhCoffee
             );
 
             routes.MapRoute(
+                name: "Item",
+                url: "Products/{action}/{id}",
+                defaults: new { controller = "Products", action = "Item", id = ""}
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "HomePage", action = "Index", id = UrlParameter.Optional }

@@ -36,12 +36,20 @@ namespace MinhCoffee.App_Start
             }
         }
 
+        /// <summary>
+        /// Create instance of CommonHandler
+        /// </summary>
+        /// <returns></returns>
         public CommonHandler getCommandHandler()
         {
             CommonHandler command = new CommonHandler();
             return command;
         }
 
+        /// <summary>
+        /// Create instance of GetConvertHandler
+        /// </summary>
+        /// <returns></returns>
         public ConvertJsonFileToObject getConvertHandler()
         {
             ConvertJsonFileToObject convert = new ConvertJsonFileToObject();
