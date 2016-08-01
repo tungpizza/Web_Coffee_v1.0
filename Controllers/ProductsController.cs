@@ -8,45 +8,45 @@ using MinhCoffee.Handler;
 using MinhCoffee.App_Start;
 using PagedList;
 using PagedList.Mvc;
+using System.Collections.Specialized;
 
 namespace MinhCoffee.Controllers
 {
     public class ProductsController : MinhBaseController
     {
+        public string path { get; set;}
+        public ProductsController()
+        {
+            string file = System.Web.Hosting.HostingEnvironment.MapPath("/App_Data/Products_GreenBeans.xml");
+            path = file;
+        }
 
-        private List<ViewItemsModel> temps;
+        private List<ViewItemsModel> _temps;
+        public List<ViewItemsModel> Temps
+        {
+            get
+            {
+                if(_temps == null)
+                {
+                    var products = getCommandHandler().LoadAllProducts(path);
+                    _temps = new List<ViewItemsModel>();
+                    if (products.Any())
+                        _temps = products;
+                }
+                return _temps;
+            }
+        }
 
         // GET: Products
         public ActionResult Index(int? page)
         {
             IPagedList<ViewItemsModel> temp = null;
-            List<ViewItemsModel> viewModel = new List<ViewItemsModel>();
-            var file = Server.MapPath("/App_Data/Products_GreenBeans.xml");
-            var products = getCommandHandler().GetProductsFromXMLFile(file);
-            string basePath = "/Assets/Images/Slides/";
-            string pathHrefs = System.Web.HttpContext.Current.Server.MapPath(basePath + "slidehrefs.json");
-            string pathSettings = System.Web.HttpContext.Current.Server.MapPath(basePath + "config.json");
-
-            var imgs = getCommandHandler().GetProductImagesFromThumbs(basePath, pathHrefs, pathSettings);
-            if (products.Any() && imgs.Any())
-            {
-                foreach (var product in products)
-                {
-                    foreach (var img in imgs)
-                    {
-                        if (product.code == img.code)
-                        {
-                            product.image = img;
-                        }
-                    }
-                    viewModel.Add(product);
-                }
-            }
+            var viewModel = getCommandHandler().LoadAllProducts(path);
 
             // store temp viewModel
             if (viewModel.Any())
             {
-                temps = viewModel;
+                _temps = viewModel;
             }
 
             // define page numbers
@@ -62,11 +62,12 @@ namespace MinhCoffee.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         /// 
+
         [HttpGet]
         public ActionResult Item(string code)
         {
             ViewItemsModel view = new ViewItemsModel();
-            var item = getCommandHandler().GetItemByCode(code, temps);
+            var item = getCommandHandler().GetItemByCode(code, Temps);
             if(item != null)
             {
                 view = item;

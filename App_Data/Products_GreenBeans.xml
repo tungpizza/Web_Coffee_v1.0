@@ -48,7 +48,7 @@
     <origin>Pakistan</origin>
     <stock>Available</stock>
     <description>Best caturra from Pakistan</description>
-    <anchor>/Products/Item/YT87</anchor>
+    <anchor>/Products/Item?code=YT87</anchor>
   </Product>
 <Product type="beans">
     <id>006</id>

@@ -5,10 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Xml.Linq;
 using System.IO;
-using MinhCoffee.Models;
-using MinhCoffee.App_Start;
-using MinhCoffee.Controllers;
 using System.Threading.Tasks;
+using MinhCoffee.Handler;
+using MinhCoffee.App_Start;
+using MinhCoffee.Models;
+using MinhCoffee.Controllers;
 
 namespace MinhCoffee.Handler
 {
@@ -156,6 +157,42 @@ namespace MinhCoffee.Handler
                 Console.WriteLine(e.Message);
             }
             return item;
+        }
+
+        /// <summary>
+        /// Load all products defined in Products_GreenBeans.xml file
+        /// </summary>
+        /// <returns></returns>
+        public List<ViewItemsModel> LoadAllProducts(string file)
+        {
+            try { 
+                List<ViewItemsModel> viewModel = new List<ViewItemsModel>();
+                var products = getCommandHandler().GetProductsFromXMLFile(file);
+                string basePath = "/Assets/Images/Slides/";
+                string pathHrefs = System.Web.HttpContext.Current.Server.MapPath(basePath + "slidehrefs.json");
+                string pathSettings = System.Web.HttpContext.Current.Server.MapPath(basePath + "config.json");
+
+                var imgs = getCommandHandler().GetProductImagesFromThumbs(basePath, pathHrefs, pathSettings);
+                if (products.Any() && imgs.Any())
+                {
+                    foreach (var product in products)
+                    {
+                        foreach (var img in imgs)
+                        {
+                            if (product.code == img.code)
+                            {
+                                product.image = img;
+                            }
+                        }
+                        viewModel.Add(product);
+                    }
+                }
+                return viewModel;
+            } catch (Exception e)
+            {
+
+            }
+            return null;
         }
     }
 }
