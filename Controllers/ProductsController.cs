@@ -14,7 +14,7 @@ namespace MinhCoffee.Controllers
 {
     public class ProductsController : MinhBaseController
     {
-        public string path { get; set;}
+        public string path { get; set; }
         public ProductsController()
         {
             string file = System.Web.Hosting.HostingEnvironment.MapPath("/App_Data/Products_GreenBeans.xml");
@@ -26,7 +26,7 @@ namespace MinhCoffee.Controllers
         {
             get
             {
-                if(_temps == null)
+                if (_temps == null)
                 {
                     var products = getCommandHandler().LoadAllProducts(path);
                     _temps = new List<ViewItemsModel>();
@@ -62,7 +62,6 @@ namespace MinhCoffee.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         /// 
-
         [HttpGet]
         public ActionResult Item(string code)
         {

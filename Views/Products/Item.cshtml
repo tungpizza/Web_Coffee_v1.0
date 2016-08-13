@@ -1,0 +1,23 @@
+﻿@using MinhCoffee.Resource;
+@using MinhCoffee.Models;
+
+@{
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div class="item-wrapper">
+    <div class="item-img-col">
+        <img src="@Model.image.src"/>
+    </div>
+    <div class="item-content-col">
+        <h3>@Model.name</h3>
+        <ul>
+            <li>@Model.description</li>
+            <li><span>@MinhCoffee.Origin</span><span>@Model.origin</span></li>
+            <li><span>@MinhCoffee.Price</span><span>@Model.price</span></li>
+            <li><span>@MinhCoffee.Stock</span><span>@Model.stock</span></li>
+        </ul>
+    </div>
+</div>
+
+
+

@@ -25,29 +25,5 @@ $(document).ready(function() {
             }
         })
     });
-
-    // sliders
-    $('.slider').unslider({
-        autoplay: true,
-        nav: true,
-        animation: 'horizontal'
-    });
-
-    $('.thumbslider').bxSlider({
-        auto: true,
-        controls: false,
-        mode: 'vertical',
-        minSlides: 2,
-        maxSlides: 2,
-        easing: 'fade',
-        speed: 1200
-    })
-
-
 }); // End of common scripts
 
-window.onload = function () {
-    setTimeout(function () {
-        overlay.style.display = "none";
-    }, 500, false);
-}

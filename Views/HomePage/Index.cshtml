@@ -69,3 +69,30 @@
 </div>
 <script type="text/javascript" src="~/Assets/JS/unslider-min.js"></script>
 <script type="text/javascript" src="~/Assets/JS/jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        // sliders
+        $('.slider').unslider({
+            autoplay: true,
+            nav: true,
+            animation: 'horizontal'
+        });
+
+        $('.thumbslider').bxSlider({
+            auto: true,
+            controls: false,
+            mode: 'vertical',
+            minSlides: 2,
+            maxSlides: 2,
+            easing: 'fade',
+            speed: 1200
+        })
+    });
+
+    // Show loading wheel
+    window.onload = function () {
+        setTimeout(function () {
+            overlay.style.display = "none";
+        }, 500, false);
+    }
+</script>
