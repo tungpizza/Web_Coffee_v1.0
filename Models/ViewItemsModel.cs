@@ -18,6 +18,9 @@ namespace MinhCoffee.Models
         public Image image { get; set; }
         public string anchor { get; set; }
         public string code { get; set; }
+        public double quantity { get; set; }
+        public double total { get; set; }
+        public string totalWithCurrency { get; set; }
 
 
         public ViewItemsModel()
@@ -31,6 +34,9 @@ namespace MinhCoffee.Models
             this.image = image;
             this.anchor = anchor;
             this.code = code;
+            this.quantity = quantity;
+            this.total = total;
+            this.totalWithCurrency = totalWithCurrency;
         }
 
         public enum IsAvailable
@@ -38,5 +44,6 @@ namespace MinhCoffee.Models
             available = 1,
             outOfstock = 0
         }
+
     }
 }
