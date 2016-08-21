@@ -11,20 +11,49 @@
         <img src="@item.image.src"/>
     </div>
     <div class="item-content-col">
-        <h3>@Html.EditorFor(m => item.name, new {@disabled="disabled"})</h3>
+        <h3>@Html.EditorFor(m => item.name, new {@disabled="disabled" })</h3>
         <ul>
             <li>@Html.DisplayTextFor(m => item.description)</li>
             <li><span>@MinhCoffee.Origin</span><span>@Html.EditorFor(m => item.origin, new { @disabled = "disabled" })</span></li>
             <li><span>@MinhCoffee.Price</span><span>@Html.EditorFor(m => item.price, new {disabled="disabled"})</span></li>
             <li><span>@MinhCoffee.Stock</span><span>@Html.EditorFor(m => item.stock, new { disabled = "disabled" })</span></li>
+        </ul>
+    </div>
+    <div class="item-dropdown">
+        <ul>
             <li>@Html.DropDownListFor(m => item.quantityWithPrices, new List<SelectListItem>(), "select package")</li>
+            <li><span>Quantity: </span><span>@Html.EditorFor(m => item.quantity)</span></li>
         </ul>
     </div>
     <div class="item-summary">
+        <h3></h3>
+        <ul>
+            <li>
+                <span>Tax</span>
+                <span></span>
+            </li>
+            <li>
+                <span>Shipping fee</span>
+                <span></span>
+            </li>
+            <li>
+                <span>Total</span>
+                <span></span>
+            </li>
+        </ul>
         <button type="submit">Process</button>
     </div>
     }
 </div>
-
+<script type="text/javascript">
+    $(function () {
+        $(".form-item input").each(function () {
+            var $this = $(this);
+            if ($this.attr("name") != "item.quantity") {
+                $this.attr("disabled", "disabled");
+            }
+        });
+    }(jQuery));
+</script>
 
 

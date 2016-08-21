@@ -586,7 +586,8 @@ ul.pagination li.active a {
     float: left;
 }
 .item-content-col {
-    margin-left: 220px;
+    margin-left: 20px;
+    float: left;
 }
 .item-content-col li {
     list-style-type: none;
@@ -612,4 +613,32 @@ ul.pagination li.active a {
     padding: 0;
     line-height: 1;
     margin: 0;
+}
+.item-summary {
+    float: right;
+    width: 250px;
+    padding-top: 30px;
+}
+.item-summary li,
+.form-item li {
+    margin-top: 10px;
+    list-style-type: none;
+}
+button[type="submit"] {
+    margin-top: 20px;
+    border: 1px solid green;
+    background: transparent;
+    color: black;
+    font-size: 20px;
+    width: 120px;
+    text-align: center;
+}
+input#item_quantity {
+    border: 1px solid green;
+    padding: 2px;
+    width: 90px;
+    height: 24px;
+}
+.item-dropdown {
+    float: left;
 }
