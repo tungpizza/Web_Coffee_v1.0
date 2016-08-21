@@ -153,6 +153,9 @@
   <data name="Origin" xml:space="preserve">
     <value>origine:</value>
   </data>
+  <data name="Package" xml:space="preserve">
+    <value>Paquet</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>prix:</value>
   </data>

@@ -169,6 +169,15 @@ namespace MinhCoffee.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Package.
+        /// </summary>
+        public static string Package {
+            get {
+                return ResourceManager.GetString("Package", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to price:.
         /// </summary>
         public static string Price {

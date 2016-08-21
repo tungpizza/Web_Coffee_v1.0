@@ -73,5 +73,15 @@ namespace MinhCoffee.Controllers
             }
             return View(view);
         }
+        /// <summary>
+        /// Handle item order submit
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Item(ViewItemsModel item)
+        {
+
+            return View();
+        }
     }
 }

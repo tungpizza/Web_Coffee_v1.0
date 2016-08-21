@@ -6,18 +6,24 @@
     var item = Model as ViewItemsModel;
 }
 <div class="item-wrapper">
+    @using(Html.BeginForm("Item", "Products", FormMethod.Post, new { id = "form-submit", @class="form-item" })) {
     <div class="item-img-col">
-        <img src="@Model.image.src"/>
+        <img src="@item.image.src"/>
     </div>
     <div class="item-content-col">
-        <h3>@Model.name</h3>
+        <h3>@Html.EditorFor(m => item.name, new {@disabled="disabled"})</h3>
         <ul>
-            <li>@Model.description</li>
-            <li><span>@MinhCoffee.Origin</span><span>@Model.origin</span></li>
-            <li><span>@MinhCoffee.Price</span><span>@Model.price</span></li>
-            <li><span>@MinhCoffee.Stock</span><span>@Model.stock</span></li>
+            <li>@Html.DisplayTextFor(m => item.description)</li>
+            <li><span>@MinhCoffee.Origin</span><span>@Html.EditorFor(m => item.origin, new { @disabled = "disabled" })</span></li>
+            <li><span>@MinhCoffee.Price</span><span>@Html.EditorFor(m => item.price, new {disabled="disabled"})</span></li>
+            <li><span>@MinhCoffee.Stock</span><span>@Html.EditorFor(m => item.stock, new { disabled = "disabled" })</span></li>
+            <li>@Html.DropDownListFor(m => item.quantityWithPrices, new List<SelectListItem>(), "select package")</li>
         </ul>
     </div>
+    <div class="item-summary">
+        <button type="submit">Process</button>
+    </div>
+    }
 </div>
 
 

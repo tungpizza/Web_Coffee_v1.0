@@ -581,3 +581,35 @@ ul.pagination li.active a {
     text-transform: lowercase;
     margin-right: 5px;
 }
+.item-img-col {
+    width: 200px;
+    float: left;
+}
+.item-content-col {
+    margin-left: 220px;
+}
+.item-content-col li {
+    list-style-type: none;
+    width: 270px;
+    margin-top: 8px;
+}
+.item-content-col li span:first-child {
+    width: 50px;
+    display: inline-block;
+    margin-right: 10px;
+    text-transform: lowercase;
+}
+.item-content-col li input {
+    background: transparent;
+    border: 0;
+    width: 200px;
+    white-space: nowrap;
+}
+.item-content-col h3 > input{
+    border: 0;
+    background: transparent;
+    font-size: 24px;
+    padding: 0;
+    line-height: 1;
+    margin: 0;
+}
