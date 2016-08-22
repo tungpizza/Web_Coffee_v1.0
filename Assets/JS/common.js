@@ -9,7 +9,7 @@ $(document).ready(function() {
         var _this = $(this);
         e.preventDefault();
         $.ajax({
-            url: 'CommonTask/LanguageHandler',
+            url: '/CommonTask/LanguageHandler',
             method: 'POST',
             contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
             dataType: 'text',

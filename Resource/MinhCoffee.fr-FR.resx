@@ -120,6 +120,15 @@
   <data name="AddTocart" xml:space="preserve">
     <value>Ajouter au panier</value>
   </data>
+  <data name="Billing" xml:space="preserve">
+    <value>facturation</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>compléter</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>continuer</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>détails</value>
   </data>
@@ -150,14 +159,26 @@
   <data name="Nav_Products" xml:space="preserve">
     <value>Produits</value>
   </data>
+  <data name="Order" xml:space="preserve">
+    <value>Ordre</value>
+  </data>
   <data name="Origin" xml:space="preserve">
     <value>origine:</value>
   </data>
   <data name="Package" xml:space="preserve">
     <value>Paquet</value>
   </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Paiement</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>prix:</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantité:</value>
+  </data>
+  <data name="Shipping_Fee" xml:space="preserve">
+    <value>frais d'expédition:</value>
   </data>
   <data name="SiteTitle" xml:space="preserve">
     <value>The_title_should_contain_keywords</value>
@@ -167,5 +188,14 @@
   </data>
   <data name="Sub_Green_Beans" xml:space="preserve">
     <value>Haricots verts Café</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Récapitulatif de la commande</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Taxe:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total:</value>
   </data>
 </root>

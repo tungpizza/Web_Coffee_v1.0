@@ -6,6 +6,16 @@
     var item = Model as ViewItemsModel;
 }
 <div class="item-wrapper">
+    <div class="process-bar">
+        <span class="line"></span>
+        <a href="#" class="nav active">@MinhCoffee.Order</a>
+        <span class="line"></span>
+        <a href="#" class="nav">@MinhCoffee.Billing</a>
+        <span class="line"></span>
+        <a href="#" class="nav">@MinhCoffee.Payment</a>
+        <span class="line"></span>
+        <label class="nav">@MinhCoffee.Complete</label>
+    </div>
     @using(Html.BeginForm("Item", "Products", FormMethod.Post, new { id = "form-submit", @class="form-item" })) {
     <div class="item-img-col">
         <img src="@item.image.src"/>
@@ -21,27 +31,27 @@
     </div>
     <div class="item-dropdown">
         <ul>
-            <li>@Html.DropDownListFor(m => item.quantityWithPrices, new List<SelectListItem>(), "select package")</li>
-            <li><span>Quantity: </span><span>@Html.EditorFor(m => item.quantity)</span></li>
+            <li><span>@MinhCoffee.Quantity : </span><span>@Html.EditorFor(m => item.quantity)</span></li>
+            <li>@Html.DropDownListFor(m => item.quantityWithPrices, new List<SelectListItem>(), "select package", new {@class="drop-list" })</li>
         </ul>
     </div>
     <div class="item-summary">
-        <h3></h3>
+        <h3>@MinhCoffee.Summary</h3>
         <ul>
             <li>
-                <span>Tax</span>
+                <span>@MinhCoffee.Tax</span>
                 <span></span>
             </li>
             <li>
-                <span>Shipping fee</span>
+                <span>@MinhCoffee.Shipping_Fee</span>
                 <span></span>
             </li>
             <li>
-                <span>Total</span>
+                <span>@MinhCoffee.Total</span>
                 <span></span>
             </li>
         </ul>
-        <button type="submit">Process</button>
+        <button type="submit">@MinhCoffee.Continue</button>
     </div>
     }
 </div>

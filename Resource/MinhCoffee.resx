@@ -120,6 +120,15 @@
   <data name="AddTocart" xml:space="preserve">
     <value>Add to cart</value>
   </data>
+  <data name="Billing" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
   <data name="Details" xml:space="preserve">
     <value>details</value>
   </data>
@@ -150,14 +159,26 @@
   <data name="Nav_Products" xml:space="preserve">
     <value>Products</value>
   </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
   <data name="Origin" xml:space="preserve">
     <value>origin:</value>
   </data>
   <data name="Package" xml:space="preserve">
     <value>Package</value>
   </data>
+  <data name="Payment" xml:space="preserve">
+    <value>Payment</value>
+  </data>
   <data name="Price" xml:space="preserve">
     <value>price:</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity:</value>
+  </data>
+  <data name="Shipping_Fee" xml:space="preserve">
+    <value>Shipping fee:</value>
   </data>
   <data name="SiteTitle" xml:space="preserve">
     <value>The_title_should_contain_keywords</value>
@@ -167,5 +188,14 @@
   </data>
   <data name="Sub_Green_Beans" xml:space="preserve">
     <value>Coffee Green Beans</value>
+  </data>
+  <data name="Summary" xml:space="preserve">
+    <value>Order Summary</value>
+  </data>
+  <data name="Tax" xml:space="preserve">
+    <value>Tax:</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total:</value>
   </data>
 </root>

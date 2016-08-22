@@ -220,12 +220,13 @@ header nav ul li a.fa-home:before {
     color: #07d007;
 }
 .main {
-    min-height: 496px;
+    min-height: 470px;
     position: relative;
+    overflow: hidden;
 }
 footer {
     font-size: 0;
-    margin: 0;
+    margin-top: 15px;
     padding: 0;
 }
 footer ul li:first-child {
@@ -623,6 +624,10 @@ ul.pagination li.active a {
 .form-item li {
     margin-top: 10px;
     list-style-type: none;
+    text-transform: lowercase;
+}
+.form-item {
+    margin-top: 30px;
 }
 button[type="submit"] {
     margin-top: 20px;
@@ -632,6 +637,7 @@ button[type="submit"] {
     font-size: 20px;
     width: 120px;
     text-align: center;
+    cursor: pointer;
 }
 input#item_quantity {
     border: 1px solid green;
@@ -641,4 +647,39 @@ input#item_quantity {
 }
 .item-dropdown {
     float: left;
+    margin-top: 52px;
+}
+.process-bar {
+    line-height: 1;
+    padding: 2px 0;
+    vertical-align: middle;
+}
+.process-bar .line {
+    width: 17%;
+    display: inline-block;
+    height: 2px;
+    background: #652c13;
+    opacity: 0.7;
+    vertical-align: middle;
+}
+.process-bar .nav {
+    padding: 2px 5px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #652c13;
+    display: inline-block;
+}
+.process-bar .nav.active {
+    color: #07d007;
+    font-weight: bold;
+}
+.drop-list {
+    width: 157px;
+}
+.item-summary h3 {
+    font-weight: normal;
+    border-bottom: 1px solid;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: lowercase;
 }
