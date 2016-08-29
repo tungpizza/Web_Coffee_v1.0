@@ -639,7 +639,7 @@ button[type="submit"] {
     text-align: center;
     cursor: pointer;
 }
-input#item_quantity {
+input#quantityUI {
     border: 1px solid green;
     padding: 2px;
     width: 90px;

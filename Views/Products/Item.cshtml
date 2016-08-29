@@ -31,7 +31,7 @@
     </div>
     <div class="item-dropdown">
         <ul>
-            <li><span>@MinhCoffee.Quantity : </span><span>@Html.EditorFor(m => item.quantity)</span></li>
+            <li><span>@MinhCoffee.Quantity </span><span>@Html.EditorFor(m => item.quantity) <input type="number" id="quantityUI" onchange="QuantityOnChange"/></span></li>
             <li>@Html.DropDownListFor(m => item.quantityWithPrices, new List<SelectListItem>(), "select package", new {@class="drop-list" })</li>
         </ul>
     </div>
@@ -59,8 +59,12 @@
     $(function () {
         $(".form-item input").each(function () {
             var $this = $(this);
-            if ($this.attr("name") != "item.quantity") {
+            if ($this.attr("id") != "quantityUI") {
                 $this.attr("disabled", "disabled");
+
+                if ($this.attr("name") == "item.quantity") {
+                    $this.css("display", "none");
+                }
             }
         });
     }(jQuery));
