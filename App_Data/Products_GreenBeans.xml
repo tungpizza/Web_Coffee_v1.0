@@ -9,6 +9,28 @@
     <stock>Available</stock>
     <description>Best caturra from Brazil</description>
     <anchor>#link1</anchor>
+    <packages>
+      <package>
+        <int>35</int>
+        <unit>20</unit>
+        <suffix>20lbs per bag</suffix>
+      </package>
+      <package>
+        <int>40</int>
+        <unit>25</unit>
+        <suffix>25lbs per bag</suffix>
+      </package>
+      <package>
+        <int>45</int>
+        <unit>30</unit>
+        <suffix>30lbs per bag</suffix>
+      </package>
+      <package>
+        <int>50</int>
+        <unit>35</unit>
+        <suffix>35lbs per bag</suffix>
+      </package>
+    </packages>
   </Product>
 <Product type="beans">
     <id>002</id>
@@ -18,7 +40,29 @@
     <origin>Vietnam</origin>
     <stock>Available</stock>
     <description>Best caturra from Vietnam</description>
-    <anchor>#link2</anchor>
+    <anchor>/Products/Item?code=03KD</anchor>
+    <packages>
+      <package>
+        <int>25</int>
+        <unit>20</unit>
+        <suffix>20lbs per bag</suffix>
+      </package>
+      <package>
+        <int>10</int>
+        <unit>25</unit>
+        <suffix>25lbs per bag</suffix>
+      </package>
+      <package>
+        <int>45</int>
+        <unit>30</unit>
+        <suffix>30lbs per bag</suffix>
+      </package>
+      <package>
+        <int>40</int>
+        <unit>35</unit>
+        <suffix>35lbs per bag</suffix>
+      </package>
+    </packages>
   </Product>
 <Product type="beans">
     <id>003</id>
@@ -29,6 +73,28 @@
     <stock>0</stock>
     <description>Best caturra from Ethiopia</description>
     <anchor>#link3</anchor>
+    <packages>
+      <package>
+        <int>135</int>
+        <unit>20</unit>
+        <suffix>20lbs per bag</suffix>
+      </package>
+      <package>
+        <int>20</int>
+        <unit>25</unit>
+        <suffix>25lbs per bag</suffix>
+      </package>
+      <package>
+        <int>55</int>
+        <unit>30</unit>
+        <suffix>30lbs per bag</suffix>
+      </package>
+      <package>
+        <int>150</int>
+        <unit>35</unit>
+        <suffix>35lbs per bag</suffix>
+      </package>
+    </packages>
   </Product>
 <Product type="beans">
     <id>004</id>
@@ -39,6 +105,28 @@
     <stock>Available</stock>
     <description>Best caturra from India</description>
     <anchor>#link4</anchor>
+    <packages>
+      <package>
+        <int>135</int>
+        <unit>20</unit>
+        <suffix>20lbs per bag</suffix>
+      </package>
+      <package>
+        <int>20</int>
+        <unit>25</unit>
+        <suffix>25lbs per bag</suffix>
+      </package>
+      <package>
+        <int>55</int>
+        <unit>30</unit>
+        <suffix>30lbs per bag</suffix>
+      </package>
+      <package>
+        <int>150</int>
+        <unit>35</unit>
+        <suffix>35lbs per bag</suffix>
+      </package>
+    </packages>
   </Product>
 <Product type="beans">
     <id>005</id>
@@ -49,6 +137,28 @@
     <stock>Available</stock>
     <description>Best caturra from Pakistan</description>
     <anchor>/Products/Item?code=YT87</anchor>
+    <packages>
+      <package>
+        <int>135</int>
+        <unit>20</unit>
+        <suffix>20lbs per bag</suffix>
+      </package>
+      <package>
+        <int>20</int>
+        <unit>25</unit>
+        <suffix>25lbs per bag</suffix>
+      </package>
+      <package>
+        <int>55</int>
+        <unit>30</unit>
+        <suffix>30lbs per bag</suffix>
+      </package>
+      <package>
+        <int>150</int>
+        <unit>35</unit>
+        <suffix>35lbs per bag</suffix>
+      </package>
+    </packages>
   </Product>
 <Product type="beans">
     <id>006</id>
@@ -59,5 +169,27 @@
     <stock>Available</stock>
     <description>Best caturra from Yemen</description>
     <anchor>#link6</anchor>
+    <packages>
+      <package>
+        <int>135</int>
+        <unit>20</unit>
+        <suffix>20lbs per bag</suffix>
+      </package>
+      <package>
+        <int>20</int>
+        <unit>25</unit>
+        <suffix>25lbs per bag</suffix>
+      </package>
+      <package>
+        <int>55</int>
+        <unit>30</unit>
+        <suffix>30lbs per bag</suffix>
+      </package>
+      <package>
+        <int>150</int>
+        <unit>35</unit>
+        <suffix>35lbs per bag</suffix>
+      </package>
+    </packages>
   </Product>
 </Products>

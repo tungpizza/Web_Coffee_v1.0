@@ -18,7 +18,7 @@ namespace MinhCoffee.Models
         public Image image { get; set; }
         public string anchor { get; set; }
         public string code { get; set; }
-        public List<object> quantityWithPrices { get; set; }
+        public IEnumerable<ViewPriceWithQuantityModel> quantityWithPrices { get; set; }
         public double quantity { get; set; }
         public double total { get; set; }
         public string totalWithCurrency { get; set; }
@@ -46,6 +46,22 @@ namespace MinhCoffee.Models
             available = 1,
             outOfstock = 0
         }
+    }
 
+    public class ViewPriceWithQuantityModel: ViewBaseModel
+    {
+        public int price { get; set; }
+        public int unit { get; set; }
+        public string suffix { get; set; }
+        public List<object> mix
+        {
+            get
+            {
+                List<object> obj = new List<object>();
+                obj.Add(price);
+                obj.Add(unit);
+                return obj;
+            }
+        }
     }
 }

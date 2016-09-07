@@ -65,12 +65,43 @@ namespace MinhCoffee.Handler
                         stock = (ViewItemsModel.IsAvailable)Enum.Parse(typeof(ViewItemsModel.IsAvailable), d.Element("stock").Value.ToLower()),
                         description = d.Element("description").Value,
                         code = d.Element("code").Value,
-                        anchor = d.Element("anchor").Value
+                        anchor = d.Element("anchor").Value,
+                        quantityWithPrices = FilterPriceWithQuantityFromXMLDocument(doc)
                     }).ToList();
+
+                // Add quantity units to products
+               
                 if (products != null)
                     lst = products;
             }
             return lst;
+        }
+
+        public IEnumerable<ViewPriceWithQuantityModel> FilterPriceWithQuantityFromXMLDocument(XDocument product)
+        {
+            try
+            {
+                IEnumerable<ViewPriceWithQuantityModel> prices = new List<ViewPriceWithQuantityModel>();
+                var parent = product.Descendants("Product");
+                foreach (var ele in parent)
+                {
+                    XElement package = ele.Element("packages");
+                    prices = package.Descendants("package")
+                        .Select(h => new ViewPriceWithQuantityModel
+                        {
+                            price = Int32.Parse(h.Element("int").Value),
+                            unit = Int32.Parse(h.Element("unit").Value),
+                            suffix = h.Element("suffix").Value.ToString()
+                        }).ToList();
+                }
+
+                return prices;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return null;
         }
 
         /// <summary>

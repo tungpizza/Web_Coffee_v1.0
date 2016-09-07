@@ -4,6 +4,11 @@
 @{
     Layout = "~/Views/Shared/Layout.cshtml";
     var item = Model as ViewItemsModel;
+    IEnumerable<SelectListItem> prices = item.quantityWithPrices.Select(f => new SelectListItem
+    {
+        Value = f.mix[0] + ":" + f.mix[1],
+        Text = f.suffix
+    });
 }
 <div class="item-wrapper">
     <div class="process-bar">
@@ -25,14 +30,14 @@
         <ul>
             <li>@Html.DisplayTextFor(m => item.description)</li>
             <li><span>@MinhCoffee.Origin</span><span>@Html.EditorFor(m => item.origin, new { @disabled = "disabled" })</span></li>
-            <li><span>@MinhCoffee.Price</span><span>@Html.EditorFor(m => item.price, new {disabled="disabled"})</span></li>
+            <li><span>@MinhCoffee.Price</span><span>@Html.EditorFor(m => item.price, new { disabled = "disabled", id = "item-price" })<i>$</i></span></li>
             <li><span>@MinhCoffee.Stock</span><span>@Html.EditorFor(m => item.stock, new { disabled = "disabled" })</span></li>
         </ul>
     </div>
     <div class="item-dropdown">
         <ul>
             <li><span>@MinhCoffee.Quantity </span><span>@Html.EditorFor(m => item.quantity) <input type="number" id="quantityUI" onchange="QuantityOnChange"/></span></li>
-            <li>@Html.DropDownListFor(m => item.quantityWithPrices, new List<SelectListItem>(), "select package", new {@class="drop-list" })</li>
+            <li>@Html.DropDownListFor(m => item.quantityWithPrices, prices, "select package", new {@class="drop-list" })</li>
         </ul>
     </div>
     <div class="item-summary">
@@ -66,6 +71,15 @@
                     $this.css("display", "none");
                 }
             }
+        });
+
+        $("#quantityUI").on("change", function () {
+            var value = $(this).val();
+        });
+
+        $("#item_quantityWithPrices").on("change", function () {
+            var value = $(this).val();
+            alert(value)
         });
     }(jQuery));
 </script>

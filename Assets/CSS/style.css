@@ -683,3 +683,9 @@ input#quantityUI {
     margin-bottom: 20px;
     text-transform: lowercase;
 }
+.item-content-col li input#item_price {
+    width: 24px;
+}
+.item-content-col li span i {
+    font-style: normal;
+}
