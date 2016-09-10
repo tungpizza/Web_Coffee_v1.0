@@ -9,6 +9,11 @@
         Value = f.mix[0] + ":" + f.mix[1],
         Text = f.suffix
     });
+
+    var _tax = item.tax + "%";
+    var _shipping = item.shipping + " cents/lbs";
+    item.price = item.quantityWithPrices.FirstOrDefault().price;
+    item.priceWithCurrency = item.price + "$";
 }
 <div class="item-wrapper">
     <div class="process-bar">
@@ -30,14 +35,14 @@
         <ul>
             <li>@Html.DisplayTextFor(m => item.description)</li>
             <li><span>@MinhCoffee.Origin</span><span>@Html.EditorFor(m => item.origin, new { @disabled = "disabled" })</span></li>
-            <li><span>@MinhCoffee.Price</span><span>@Html.EditorFor(m => item.price, new { disabled = "disabled", id = "item-price" })<i>$</i></span></li>
+            <li><span>@MinhCoffee.Price</span><span>@Html.EditorFor(m => item.price, new { disabled = "disabled", id = "item-price"}) <label id="price-label">@item.priceWithCurrency</label></span></li>
             <li><span>@MinhCoffee.Stock</span><span>@Html.EditorFor(m => item.stock, new { disabled = "disabled" })</span></li>
         </ul>
     </div>
     <div class="item-dropdown">
         <ul>
-            <li><span>@MinhCoffee.Quantity </span><span>@Html.EditorFor(m => item.quantity) <input type="number" id="quantityUI" onchange="QuantityOnChange"/></span></li>
-            <li>@Html.DropDownListFor(m => item.quantityWithPrices, prices, "select package", new {@class="drop-list" })</li>
+            <li><span>@MinhCoffee.Quantity </span><span>@Html.EditorFor(m => item.quantity) <input type="number" value="0" id="iten_quantity_visible"/></span></li>
+            <li><input type="number" id="item_bag_weight" value="@item.quantityWithPrices.FirstOrDefault().unit" style="display: none" /> @Html.DropDownListFor(m => item.quantityWithPrices, prices, new {@class="drop-list" })</li>
         </ul>
     </div>
     <div class="item-summary">
@@ -45,15 +50,17 @@
         <ul>
             <li>
                 <span>@MinhCoffee.Tax</span>
-                <span></span>
+                <input type="number" id="item_tax" disabled="disabled" style="display: none;" value="@item.tax" />
+                <span>@_tax</span>
             </li>
             <li>
                 <span>@MinhCoffee.Shipping_Fee</span>
-                <span></span>
+                <input type="number" id="item_shipping" disabled="disabled" style="display: none;" value="@item.shipping" />
+                <span>@_shipping</span>
             </li>
             <li>
                 <span>@MinhCoffee.Total</span>
-                <span></span>
+                <span id="item_total"></span>
             </li>
         </ul>
         <button type="submit">@MinhCoffee.Continue</button>
@@ -64,22 +71,59 @@
     $(function () {
         $(".form-item input").each(function () {
             var $this = $(this);
-            if ($this.attr("id") != "quantityUI") {
+            if ($this.attr("id") != "iten_quantity_visible") {
                 $this.attr("disabled", "disabled");
 
-                if ($this.attr("name") == "item.quantity") {
+                // disable the input to prevent the editing
+                if ($this.attr("id") == "item.quantity") {
                     $this.css("display", "none");
                 }
             }
         });
 
-        $("#quantityUI").on("change", function () {
+        // attach change event to quantity
+        $("#iten_quantity_visible").on("change", function () {
             var value = $(this).val();
+            if (value.indexOf(".") != -1 || value.indexOf(",") != -1) {
+                alert("Quantity must be an integer !");
+                return;
+            }
+
+            $("#item_quantity").attr("value", value);
+            calculate();
         });
 
+        // attach change event to quantityWithPrices
         $("#item_quantityWithPrices").on("change", function () {
-            var value = $(this).val();
-            alert(value)
+            var value = $(this).val(), change = value.split(":");
+            if (change.length == 2) {
+                $("#item_price").attr("value", change[0]);
+                $("#price-label").text(change[0] + "$");
+            }
+            calculate();
+        });
+
+        // calculate the total price
+        function calculate() {
+            var _price = $("#item_price").val(),
+                _quantity = $("#item_quantity").val(),
+                _taxed = $("#item_tax").val(),
+                _shipping = $("#item_shipping").val(),
+                _weight = $("#item_bag_weight").val(),
+                _total = $("#item_total");
+
+            var totalnotax = 0;
+            var total = 0;
+            if (_price != null && _quantity != null && _taxed != null && _shipping != null) {
+                totalnotax = _price * _quantity + _shipping * _quantity * _weight / 100;
+                total = totalnotax + (totalnotax * _taxed / 100);
+                _total.text(total + "$");
+            }
+        };
+
+        // page loaded 
+        $(window).load(function () {
+            calculate();
         });
     }(jQuery));
 </script>

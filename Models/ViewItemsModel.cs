@@ -22,6 +22,8 @@ namespace MinhCoffee.Models
         public double quantity { get; set; }
         public double total { get; set; }
         public string totalWithCurrency { get; set; }
+        public double tax { get; set; }
+        public double shipping { get; set; }
 
 
         public ViewItemsModel()
@@ -38,6 +40,8 @@ namespace MinhCoffee.Models
             this.code = code;
             this.quantity = quantity;
             this.total = total;
+            this.tax = tax;
+            this.shipping = shipping;
             this.totalWithCurrency = totalWithCurrency;
         }
 
@@ -50,8 +54,8 @@ namespace MinhCoffee.Models
 
     public class ViewPriceWithQuantityModel: ViewBaseModel
     {
-        public int price { get; set; }
-        public int unit { get; set; }
+        public double price { get; set; }
+        public double unit { get; set; }
         public string suffix { get; set; }
         public List<object> mix
         {

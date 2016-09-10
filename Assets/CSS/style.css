@@ -639,8 +639,7 @@ button[type="submit"] {
     text-align: center;
     cursor: pointer;
 }
-input#quantityUI {
-    border: 1px solid green;
+input#item_quantity_visible {
     padding: 2px;
     width: 90px;
     height: 24px;
@@ -684,8 +683,23 @@ input#quantityUI {
     text-transform: lowercase;
 }
 .item-content-col li input#item_price {
-    width: 24px;
+    display: none;
 }
 .item-content-col li span i {
     font-style: normal;
+}
+input#item_quantity {
+    display: none;
+}
+
+input#iten_quantity_visible {
+    width: 60px;
+    text-align: center;
+}
+
+input#iten_quantity_visible::-webkit-outer-spin-button,
+input#iten_quantity_visible::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }

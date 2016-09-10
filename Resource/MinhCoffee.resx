@@ -177,6 +177,9 @@
   <data name="Quantity" xml:space="preserve">
     <value>Quantity:</value>
   </data>
+  <data name="Selection" xml:space="preserve">
+    <value>select package</value>
+  </data>
   <data name="Shipping_Fee" xml:space="preserve">
     <value>Shipping fee:</value>
   </data>

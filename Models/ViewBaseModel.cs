@@ -10,7 +10,7 @@ namespace MinhCoffee.Models
         /// <summary>
         /// Id
         /// </summary>
-        public int Id { get; set; }
+        public double Id { get; set; }
     }
 
     public class ViewBaseModelPrice

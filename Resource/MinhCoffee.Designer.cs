@@ -241,6 +241,15 @@ namespace MinhCoffee.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to select package.
+        /// </summary>
+        public static string Selection {
+            get {
+                return ResourceManager.GetString("Selection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Shipping fee:.
         /// </summary>
         public static string Shipping_Fee {

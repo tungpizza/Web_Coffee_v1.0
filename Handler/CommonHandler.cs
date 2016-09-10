@@ -57,7 +57,7 @@ namespace MinhCoffee.Handler
             {
                 List<ViewItemsModel> products = doc.Descendants("Product")
                     .Select(d => new ViewItemsModel {
-                        Id = Int32.Parse(d.Element("id").Value),
+                        Id = double.Parse(d.Element("id").Value),
                         name = d.Element("name").Value,
                         price = double.Parse(d.Element("price").Value),
                         priceWithCurrency = d.Element("price").Value + ViewBaseModelPrice.US,
@@ -66,7 +66,9 @@ namespace MinhCoffee.Handler
                         description = d.Element("description").Value,
                         code = d.Element("code").Value,
                         anchor = d.Element("anchor").Value,
-                        quantityWithPrices = FilterPriceWithQuantityFromXMLDocument(doc)
+                        quantityWithPrices = FilterPriceWithQuantityFromXMLDocument(doc),
+                        tax = double.Parse(d.Element("tax").Value),
+                        shipping = double.Parse(d.Element("shipping").Value)
                     }).ToList();
 
                 // Add quantity units to products
@@ -89,8 +91,8 @@ namespace MinhCoffee.Handler
                     prices = package.Descendants("package")
                         .Select(h => new ViewPriceWithQuantityModel
                         {
-                            price = Int32.Parse(h.Element("int").Value),
-                            unit = Int32.Parse(h.Element("unit").Value),
+                            price = double.Parse(h.Element("int").Value),
+                            unit = double.Parse(h.Element("unit").Value),
                             suffix = h.Element("suffix").Value.ToString()
                         }).ToList();
                 }
