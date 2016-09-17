@@ -73,6 +73,7 @@ namespace MinhCoffee.Controllers
             }
             return View(view);
         }
+
         /// <summary>
         /// Handle item order submit
         /// </summary>
@@ -80,6 +81,38 @@ namespace MinhCoffee.Controllers
         [HttpPost]
         public ActionResult Item(ViewItemsModel item)
         {
+            try
+            {
+                ViewBillingModel billing = new ViewBillingModel();
+                if(item != null)
+                {
+                    billing.item = item;
+                }
+                return RedirectToAction("Billing", billing);
+            }
+            catch(Exception ex)
+            {
+
+            }
+
+            return null;
+        }
+
+        [HttpGet]
+        public ActionResult Billing(ViewItemsModel item)
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// Method to process the post data from Billing Page
+        /// </summary>
+        /// <returns></returns>
+        /// 
+        [HttpPost]
+        public ActionResult BillingProcess(ViewBillingModel model)
+        {
+
 
             return View();
         }

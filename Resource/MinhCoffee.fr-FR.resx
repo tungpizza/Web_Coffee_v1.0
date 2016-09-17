@@ -123,6 +123,9 @@
   <data name="Billing" xml:space="preserve">
     <value>facturation</value>
   </data>
+  <data name="Canada" xml:space="preserve">
+    <value>Canada</value>
+  </data>
   <data name="Complete" xml:space="preserve">
     <value>compléter</value>
   </data>
@@ -165,6 +168,9 @@
   <data name="Origin" xml:space="preserve">
     <value>origine:</value>
   </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
   <data name="Package" xml:space="preserve">
     <value>Paquet</value>
   </data>
@@ -200,5 +206,8 @@
   </data>
   <data name="Total" xml:space="preserve">
     <value>Total:</value>
+  </data>
+  <data name="Usa" xml:space="preserve">
+    <value>Etats-Unis d'Amerique</value>
   </data>
 </root>

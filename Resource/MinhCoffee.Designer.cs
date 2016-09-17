@@ -79,6 +79,15 @@ namespace MinhCoffee.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Canada.
+        /// </summary>
+        public static string Canada {
+            get {
+                return ResourceManager.GetString("Canada", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Complete.
         /// </summary>
         public static string Complete {
@@ -205,6 +214,15 @@ namespace MinhCoffee.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Other.
+        /// </summary>
+        public static string Other {
+            get {
+                return ResourceManager.GetString("Other", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Package.
         /// </summary>
         public static string Package {
@@ -309,6 +327,15 @@ namespace MinhCoffee.Resource {
         public static string Total {
             get {
                 return ResourceManager.GetString("Total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to United States.
+        /// </summary>
+        public static string Usa {
+            get {
+                return ResourceManager.GetString("Usa", resourceCulture);
             }
         }
     }
