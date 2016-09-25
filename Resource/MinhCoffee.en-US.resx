@@ -123,6 +123,30 @@
   <data name="Billing" xml:space="preserve">
     <value>Billing</value>
   </data>
+  <data name="BuyerAddressLine1" xml:space="preserve">
+    <value>Address (Line 1)</value>
+  </data>
+  <data name="BuyerAddressLine2" xml:space="preserve">
+    <value>Address (Line 2)</value>
+  </data>
+  <data name="BuyerCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="BuyerCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="BuyerInfoLabel" xml:space="preserve">
+    <value>Buyer's Information</value>
+  </data>
+  <data name="BuyerMobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="BuyerName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="BuyerPhone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
   <data name="Canada" xml:space="preserve">
     <value>Canada</value>
   </data>
@@ -149,6 +173,9 @@
   </data>
   <data name="FootNav_Terms" xml:space="preserve">
     <value>terms &amp; policies</value>
+  </data>
+  <data name="IsSameInfo" xml:space="preserve">
+    <value>Use Buyer's Information</value>
   </data>
   <data name="Label_1" xml:space="preserve">
     <value>Testing_US</value>
@@ -182,6 +209,30 @@
   </data>
   <data name="Quantity" xml:space="preserve">
     <value>Quantity:</value>
+  </data>
+  <data name="ReceiverAddressLine1" xml:space="preserve">
+    <value>Address (Line 1)</value>
+  </data>
+  <data name="ReceiverAddressLine2" xml:space="preserve">
+    <value>Address(Line 2)</value>
+  </data>
+  <data name="ReceiverCity" xml:space="preserve">
+    <value>City</value>
+  </data>
+  <data name="ReceiverCountry" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="ReceiverInfoLabel" xml:space="preserve">
+    <value>Receiver's Information</value>
+  </data>
+  <data name="ReceiverMobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="ReceiverName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ReceiverPhone" xml:space="preserve">
+    <value>Phone</value>
   </data>
   <data name="Selection" xml:space="preserve">
     <value>select package</value>

@@ -26,7 +26,7 @@
         <span class="line"></span>
         <label class="nav">@MinhCoffee.Complete</label>
     </div>
-    @using(Html.BeginForm("Item", "Products", FormMethod.Post, new { id = "form-submit", @class="form-item" })) {
+    @using(Html.BeginForm("ItemProcess", "Products", FormMethod.Post, new { id = "form-submit", @class="form-item" })) {
     <div class="item-img-col">
         <img src="@item.image.src"/>
     </div>
@@ -34,9 +34,9 @@
         <h3>@Html.EditorFor(m => item.name, new {@disabled="disabled" })</h3>
         <ul>
             <li>@Html.DisplayTextFor(m => item.description)</li>
-            <li><span>@MinhCoffee.Origin</span><span>@Html.EditorFor(m => item.origin, new { @disabled = "disabled" })</span></li>
-            <li><span>@MinhCoffee.Price</span><span>@Html.EditorFor(m => item.price, new { disabled = "disabled", id = "item-price"}) <label id="price-label">@item.priceWithCurrency</label></span></li>
-            <li><span>@MinhCoffee.Stock</span><span>@Html.EditorFor(m => item.stock, new { disabled = "disabled" })</span></li>
+            <li><span>@MinhCoffee.Origin</span><span>@Html.TextBoxFor(m => item.origin, new { @disabled = "disabled" })</span></li>
+            <li><span>@MinhCoffee.Price</span><span>@Html.TextBoxFor(m => item.price, new { disabled = "disabled", id = "item-price"}) <label id="price-label">@item.priceWithCurrency</label></span></li>
+            <li><span>@MinhCoffee.Stock</span><span>@Html.TextBoxFor(m => item.stock, new { disabled = "disabled" })</span></li>
         </ul>
     </div>
     <div class="item-dropdown">
@@ -51,6 +51,7 @@
             <li>
                 <span>@MinhCoffee.Tax</span>
                 <input type="number" id="item_tax" disabled="disabled" style="display: none;" value="@item.tax" />
+                @Html.EditorFor(m => item.tax, new {@disbaled="disabled"})
                 <span>@_tax</span>
             </li>
             <li>

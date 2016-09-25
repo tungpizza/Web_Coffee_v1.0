@@ -79,7 +79,7 @@ namespace MinhCoffee.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ActionResult Item(ViewItemsModel item)
+        public ActionResult ItemProcess(ViewItemsModel item)
         {
             try
             {

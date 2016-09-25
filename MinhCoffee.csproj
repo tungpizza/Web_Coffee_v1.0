@@ -95,28 +95,24 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.Web.Helpers.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.Web.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.Web.WebPages.Deployment.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
-      <Private>True</Private>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml">
       <Private>True</Private>
@@ -135,7 +131,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Products_GreenBeans.xml" />
+    <Content Include="App_Data\Products_GreenBeans.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Assets\CSS\font-awesome.min.css" />
     <Content Include="Assets\CSS\normalize.css" />
     <Content Include="Assets\CSS\style-mobile.css" />
@@ -157,7 +155,26 @@
     <Content Include="Assets\JS\jquery-1.12.4.min.js" />
     <Content Include="Assets\JS\jquery.bxslider.min.js" />
     <Content Include="Assets\JS\unslider-min.js" />
+    <Content Include="Assets\CSS\PagedList.css" />
     <Content Include="Global.asax" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.xml" />
+    <Content Include="packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll" />
+    <Content Include="packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.xml" />
+    <Content Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="packages\PagedList.1.17.0.0\lib\net40\PagedList.dll" />
+    <Content Include="packages\PagedList.1.17.0.0\lib\net40\PagedList.xml" />
+    <Content Include="packages\PagedList.Mvc.4.5.0.0\Content\Content\PagedList.css" />
+    <Content Include="packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll" />
+    <Content Include="packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.XML" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -167,11 +184,13 @@
     <Compile Include="Controllers\CommonTaskController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Converters\EnumToString.cs" />
+    <Compile Include="Converters\JsonFileToObjects.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Handler\CommonHandler.cs" />
-    <Compile Include="Handler\ConvertJsonFileToObject.cs" />
+    <Compile Include="Models\ViewBillingModel.cs" />
     <Compile Include="Models\ViewItemsModel.cs" />
     <Compile Include="Models\ViewBaseModel.cs" />
     <Compile Include="Models\ViewContactModel.cs" />
@@ -212,6 +231,18 @@
     <Content Include="Assets\Images\Slides\storedcaptionfile.json" />
     <Content Include="Assets\Images\Slides\slidehrefs.json" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\Content\Web.config.install.xdt" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\Content\Web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.5.2.3\Microsoft.AspNet.Mvc.5.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.Razor.3.2.3\Microsoft.AspNet.Razor.3.2.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\Content\Web.config.install.xdt" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\Content\Web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.3.2.3\Microsoft.AspNet.WebPages.3.2.3.nupkg" />
+    <Content Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\Microsoft.Web.Infrastructure.1.0.0.0.nupkg" />
+    <Content Include="packages\PagedList.1.17.0.0\PagedList.1.17.0.0.nupkg" />
+    <Content Include="packages\PagedList.Mvc.4.5.0.0\PagedList.Mvc.4.5.0.0.nupkg" />
+    <Content Include="Views\Products\Item.cshtml" />
+    <Content Include="Views\Products\Billing.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

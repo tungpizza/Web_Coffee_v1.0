@@ -79,6 +79,78 @@ namespace MinhCoffee.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address (Line 1).
+        /// </summary>
+        public static string BuyerAddressLine1 {
+            get {
+                return ResourceManager.GetString("BuyerAddressLine1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address (Line 2).
+        /// </summary>
+        public static string BuyerAddressLine2 {
+            get {
+                return ResourceManager.GetString("BuyerAddressLine2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string BuyerCity {
+            get {
+                return ResourceManager.GetString("BuyerCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string BuyerCountry {
+            get {
+                return ResourceManager.GetString("BuyerCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Buyer&apos;s Information.
+        /// </summary>
+        public static string BuyerInfoLabel {
+            get {
+                return ResourceManager.GetString("BuyerInfoLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string BuyerMobile {
+            get {
+                return ResourceManager.GetString("BuyerMobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string BuyerName {
+            get {
+                return ResourceManager.GetString("BuyerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string BuyerPhone {
+            get {
+                return ResourceManager.GetString("BuyerPhone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Canada.
         /// </summary>
         public static string Canada {
@@ -156,6 +228,15 @@ namespace MinhCoffee.Resource {
         public static string FootNav_Terms {
             get {
                 return ResourceManager.GetString("FootNav_Terms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use Buyer&apos;s Information.
+        /// </summary>
+        public static string IsSameInfo {
+            get {
+                return ResourceManager.GetString("IsSameInfo", resourceCulture);
             }
         }
         
@@ -255,6 +336,78 @@ namespace MinhCoffee.Resource {
         public static string Quantity {
             get {
                 return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address (Line 1).
+        /// </summary>
+        public static string ReceiverAddressLine1 {
+            get {
+                return ResourceManager.GetString("ReceiverAddressLine1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address(Line 2).
+        /// </summary>
+        public static string ReceiverAddressLine2 {
+            get {
+                return ResourceManager.GetString("ReceiverAddressLine2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to City.
+        /// </summary>
+        public static string ReceiverCity {
+            get {
+                return ResourceManager.GetString("ReceiverCity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country.
+        /// </summary>
+        public static string ReceiverCountry {
+            get {
+                return ResourceManager.GetString("ReceiverCountry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Receiver&apos;s Information.
+        /// </summary>
+        public static string ReceiverInfoLabel {
+            get {
+                return ResourceManager.GetString("ReceiverInfoLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string ReceiverMobile {
+            get {
+                return ResourceManager.GetString("ReceiverMobile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        public static string ReceiverName {
+            get {
+                return ResourceManager.GetString("ReceiverName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string ReceiverPhone {
+            get {
+                return ResourceManager.GetString("ReceiverPhone", resourceCulture);
             }
         }
         

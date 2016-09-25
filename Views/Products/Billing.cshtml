@@ -1,9 +1,101 @@
 ﻿@using MinhCoffee.Resource;
+@using MinhCoffee.Models;
+@using MinhCoffee.Converters;
+@{
+    var item = Model as ViewBillingModel;
+    IEnumerable<SelectListItem> buyerCountries = item.buyerCountry.Select(m => new SelectListItem
+    {
+        Value = EnumToString.CountryEnumToString(m)
+    });
 
+    IEnumerable<SelectListItem> receiverCountries = item.buyerCountry.Select(m => new SelectListItem
+    {
+        Value = EnumToString.CountryEnumToString(m)
+    });
+}
+}
 
 <div class="billing-info">
     @using(Html.BeginForm("BillingProcess", "Products", FormMethod.Post, new {@id="billing-form", @class="billing-body"}))
     {
+        <table class="buyer-info">
+            <thead>
+                <tr>
+                    <th>@MinhCoffee.BuyerInfoLabel</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@MinhCoffee.BuyerName</td>
+                    <td>@Html.EditorFor(m => item.buyerName)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.BuyerPhone</td>
+                    <td>@Html.EditorFor(m => item.buyerPhone)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.BuyerMobile</td>
+                    <td>@Html.EditorFor(m => item.buyerMobile)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.BuyerAddressLine1</td>
+                    <td>@Html.EditorFor(m => item.buyerAddressLine1)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.BuyerAddressLine2</td>
+                    <td>@Html.EditorFor(m => item.buyerAddressLine2)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.BuyerCity</td>
+                    <td>@Html.EditorFor(m => item.buyerCity)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.BuyerCountry</td>
+                    <td>@Html.DropDownListFor(m => item.buyerCountry, buyerCountries)</td>
+                </tr>
 
+            </tbody>
+        </table>
+        <input type="checkbox" class="is-checkbox" />
+        <table class="receiver-info">
+            <thead>
+                <tr>
+                    <th>@MinhCoffee.ReceiverInfoLabel</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@MinhCoffee.ReceiverName</td>
+                    <td>@Html.EditorFor(m => item.receiverName)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.ReceiverPhone</td>
+                    <td>@Html.EditorFor(m => item.receiverPhone)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.ReceiverMobile</td>
+                    <td>@Html.EditorFor(m => item.receiverMobile)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.ReceiverAddressLine1</td>
+                    <td>@Html.EditorFor(m => item.receiverAddressLine1)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.ReceiverAddressLine2</td>
+                    <td>@Html.EditorFor(m => item.receiverAdressLine2)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.ReceiverCity</td>
+                    <td>@Html.EditorFor(m => item.receiverCity)</td>
+                </tr>
+                <tr>
+                    <td>@MinhCoffee.ReceiverCountry</td>
+                    <td>@Html.DropDownListFor(m => item.receiverCountry, receiverCountries)</td>
+                </tr>
+
+            </tbody>
+        </table>
     }
 </div>

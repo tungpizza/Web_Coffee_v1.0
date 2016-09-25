@@ -7,9 +7,9 @@ using MinhCoffee.Resource;
 
 namespace MinhCoffee.Converters
 {
-    public class EnumToString
+    public static class EnumToString
     {
-        public string CountryEnumToString(country nation)
+        public static string CountryEnumToString(country nation)
         {
             try
             {
