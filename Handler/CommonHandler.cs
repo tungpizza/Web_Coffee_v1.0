@@ -227,5 +227,28 @@ namespace MinhCoffee.Handler
             }
             return null;
         }
+
+        /// <summary>
+        /// Method GeneratedXDocumentFromFile
+        /// </summary>
+        /// <param name="filePath"></param>
+        /// <returns></returns>
+        public XDocument GeneratedXDocumentFromFile(string filePath)
+        {
+            if(filePath != string.Empty) { 
+                 XDocument docs = XDocument.Load(filePath);
+                return docs;
+            }
+            return null;
+        } 
+
+        public IEnumerable<ViewPriceWithQuantityModel> GetAllPricesWithQuantites(string path)
+        {
+            List<ViewPriceWithQuantityModel> result = new List<ViewPriceWithQuantityModel>();
+            XDocument docs = GeneratedXDocumentFromFile(path);
+            result = FilterPriceWithQuantityFromXMLDocument(docs).ToList();
+
+            return result;
+        }
     }
 }

@@ -1,22 +1,17 @@
 ﻿@using MinhCoffee.Resource;
 @using MinhCoffee.Models;
 @using MinhCoffee.Converters;
+@model ViewBillingModel
 @{
-    var item = Model as ViewBillingModel;
-    IEnumerable<SelectListItem> buyerCountries = item.buyerCountry.Select(m => new SelectListItem
+    IEnumerable<SelectListItem> buyerCountries = Model.buyerCountry.ToList().Select(m => new SelectListItem
     {
-        Value = EnumToString.CountryEnumToString(m)
+        Value = m.ToString(),
+        Text = EnumToString.CountryEnumToString(m)
     });
-
-    IEnumerable<SelectListItem> receiverCountries = item.buyerCountry.Select(m => new SelectListItem
-    {
-        Value = EnumToString.CountryEnumToString(m)
-    });
-}
 }
 
 <div class="billing-info">
-    @using(Html.BeginForm("BillingProcess", "Products", FormMethod.Post, new {@id="billing-form", @class="billing-body"}))
+    @using(Html.BeginForm("BillingProcess", "Products", FormMethod.Post))
     {
         <table class="buyer-info">
             <thead>
@@ -28,31 +23,31 @@
             <tbody>
                 <tr>
                     <td>@MinhCoffee.BuyerName</td>
-                    <td>@Html.EditorFor(m => item.buyerName)</td>
+                    <td>@Html.EditorFor(m => m.buyerName)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.BuyerPhone</td>
-                    <td>@Html.EditorFor(m => item.buyerPhone)</td>
+                    <td>@Html.EditorFor(m => m.buyerPhone)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.BuyerMobile</td>
-                    <td>@Html.EditorFor(m => item.buyerMobile)</td>
+                    <td>@Html.EditorFor(m => m.buyerMobile)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.BuyerAddressLine1</td>
-                    <td>@Html.EditorFor(m => item.buyerAddressLine1)</td>
+                    <td>@Html.EditorFor(m => m.buyerAddressLine1)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.BuyerAddressLine2</td>
-                    <td>@Html.EditorFor(m => item.buyerAddressLine2)</td>
+                    <td>@Html.EditorFor(m => m.buyerAddressLine2)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.BuyerCity</td>
-                    <td>@Html.EditorFor(m => item.buyerCity)</td>
+                    <td>@Html.EditorFor(m => m.buyerCity)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.BuyerCountry</td>
-                    <td>@Html.DropDownListFor(m => item.buyerCountry, buyerCountries)</td>
+                    <td>@Html.DropDownListFor(m => m.buyerCountry, buyerCountries)</td>
                 </tr>
 
             </tbody>
@@ -68,31 +63,31 @@
             <tbody>
                 <tr>
                     <td>@MinhCoffee.ReceiverName</td>
-                    <td>@Html.EditorFor(m => item.receiverName)</td>
+                    <td>@Html.EditorFor(m => m.receiverName)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.ReceiverPhone</td>
-                    <td>@Html.EditorFor(m => item.receiverPhone)</td>
+                    <td>@Html.EditorFor(m => m.receiverPhone)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.ReceiverMobile</td>
-                    <td>@Html.EditorFor(m => item.receiverMobile)</td>
+                    <td>@Html.EditorFor(m => m.receiverMobile)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.ReceiverAddressLine1</td>
-                    <td>@Html.EditorFor(m => item.receiverAddressLine1)</td>
+                    <td>@Html.EditorFor(m => m.receiverAddressLine1)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.ReceiverAddressLine2</td>
-                    <td>@Html.EditorFor(m => item.receiverAdressLine2)</td>
+                    <td>@Html.EditorFor(m => m.receiverAdressLine2)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.ReceiverCity</td>
-                    <td>@Html.EditorFor(m => item.receiverCity)</td>
+                    <td>@Html.EditorFor(m => m.receiverCity)</td>
                 </tr>
                 <tr>
                     <td>@MinhCoffee.ReceiverCountry</td>
-                    <td>@Html.DropDownListFor(m => item.receiverCountry, receiverCountries)</td>
+                    <td>@Html.DropDownListFor(m => m.receiverCountry, buyerCountries)</td>
                 </tr>
 
             </tbody>

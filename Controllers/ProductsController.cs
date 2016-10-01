@@ -84,24 +84,36 @@ namespace MinhCoffee.Controllers
             try
             {
                 ViewBillingModel billing = new ViewBillingModel();
+                IEnumerable<ViewPriceWithQuantityModel> prices = getCommandHandler().GetAllPricesWithQuantites(path);
                 if(item != null)
                 {
-                    billing.item = item;
+                    item.quantityWithPrices = prices;
                 }
-                return RedirectToAction("Billing", billing);
+
+                TempData["BindingItem"] = item;
+                return RedirectToAction("Billing");
             }
             catch(Exception ex)
             {
-
             }
 
             return null;
         }
 
+        /// <summary>
+        /// Biling actionName
+        /// </summary>
+        /// <param name="binding"></param>
+        /// <returns></returns>
         [HttpGet]
-        public ActionResult Billing(ViewItemsModel item)
+        public ActionResult Billing()
         {
-            return View();
+            ViewBillingModel billingData = new ViewBillingModel();
+            ViewItemsModel items = TempData["BindingItem"] as ViewItemsModel;
+            billingData.item = items;
+
+            TempData["BindingBilling"] = billingData;
+            return View(billingData);
         }
 
         /// <summary>

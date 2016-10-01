@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MinhCoffee.Converters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -43,7 +44,7 @@ namespace MinhCoffee.Models
             this.buyerAddressLine1 = buyerAddressLine1;
             this.buyerAddressLine2 = buyerAddressLine2;
             this.buyerCity = buyerCity;
-            this.buyerCountry = countries.ToList();
+            this.buyerCountry = countries;
 
             this.receiverName = receiverName;
             this.receiverPhone = receiverPhone;
@@ -51,7 +52,7 @@ namespace MinhCoffee.Models
             this.receiverAddressLine1 = receiverAddressLine1;
             this.receiverAdressLine2 = receiverAdressLine2;
             this.receiverCity = receiverCity;
-            this.receiverCountry = countries.ToList();
+            this.receiverCountry = countries;
 
             this.isSame = isSame;
             this.item = item;
